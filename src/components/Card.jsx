@@ -6,8 +6,6 @@ const MovieCard = ({ movie }) => {
 
     const navigate = useNavigate();
 
-    if (!movie) return null;
-
     const borderColor = '#ddd';
     const cardHoverShadow = 6;
     const boxShadowImage = 2;
@@ -46,19 +44,16 @@ const MovieCard = ({ movie }) => {
                 image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
             />
-
             <CardContent sx={{ flex: 1, padding: 2 }}>
                 <Typography variant="h6" component="div" gutterBottom sx={{ fontWeight: 'bold', color: textColor }}>
                     {movie.title} ({movie.release_date.split('-')[0]})
                 </Typography>
-
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                     <Rating value={movie.vote_average / 2} precision={0.5} readOnly sx={{ mr: 1, color: ratingColor }} />
                     <Typography variant="body2" sx={{ ml: 1, color: textColor }}>
                         {movie.vote_average.toFixed(1)} / 10 ({movie.vote_count} votes) | Popularity: {movie.popularity}
                     </Typography>
                 </Box>
-
                 <Typography variant="body2" sx={{ mb: 2, color: textColor }}>
                     {movie.overview?.slice(0, 150)}
                     {movie.overview?.length > 150 && '...'}
@@ -69,10 +64,8 @@ const MovieCard = ({ movie }) => {
                         <Chip key={genre} label={genre} color={chipColor} size="small" sx={{ marginTop: 1 }} />
                     ))}
                 </Box>
-
-                {/* Action Buttons */}
                 <Stack direction="row" spacing={2}>
-                    <Button variant="contained" color="primary" onClick={() => navigate()}>
+                    <Button variant="contained" color="primary" onClick={() => navigate(`/movie/search/${movie.id}`)}>
                         View Details
                     </Button>
                     <Button variant="outlined" color="secondary" onClick={() => navigate()}>
@@ -82,7 +75,6 @@ const MovieCard = ({ movie }) => {
             </CardContent>
         </Card>
     );
-
     return (
         <Container sx={{ paddingX: 2, paddingY: 3 }}>
             <Box

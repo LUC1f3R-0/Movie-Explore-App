@@ -86,11 +86,11 @@ export default function SimpleNavBar() {
                                 textDecoration: isActive ? 'underline' : 'none',
                             })}
                         >
-                            HOME
+                            Trending
                         </NavLink>
 
                         <NavLink to="two" sx={{ fontWeight: 'bold', color: isDark ? 'white' : 'blue', position: 'relative' }} style={({ isActive }) => ({ fontWeight: 'bold', color: isActive ? 'orange' : isDark ? 'white' : 'blue', textDecoration: isActive ? 'underline' : 'none', })}>
-                            LINK 2
+                            Top Rated
                         </NavLink>
 
                         <NavLink
@@ -102,7 +102,7 @@ export default function SimpleNavBar() {
                                 textDecoration: isActive ? 'underline' : 'none',
                             })}
                         >
-                            LINK 3
+                            Upcoming
                         </NavLink>
                     </Box>
 

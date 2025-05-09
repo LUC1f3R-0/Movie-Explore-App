@@ -15,7 +15,7 @@ const Movies = () => {
         try {
             const { data, status } = await axiosInstance.get('/discover/movie');
             if (status === 200) {
-                dispatch(setMovies(data.results)); // Save to store
+                dispatch(setMovies(data.results));
                 setLoading(true);
             }
         } catch (error) {
