@@ -6,6 +6,19 @@ const MovieCard = ({ movie }) => {
 
     const navigate = useNavigate();
 
+    const saveHandler = (id) => {
+        const favorites = JSON.parse(localStorage.getItem('favorite')) || [];
+
+        if (!favorites.includes(id)) {
+            favorites.push(id); // Add new movie ID
+            localStorage.setItem('favorite', JSON.stringify(favorites)); // Save updated array
+            console.log("Added to favorites:", favorites);
+        } else {
+            console.log("Already in favorites");
+        }
+    };
+
+
     const borderColor = '#ddd';
     const cardHoverShadow = 6;
     const boxShadowImage = 2;
@@ -65,10 +78,10 @@ const MovieCard = ({ movie }) => {
                     ))}
                 </Box>
                 <Stack direction="row" spacing={2}>
-                    <Button variant="contained" color="primary" onClick={() => navigate(`/movie/search/${movie.id}`)}>
+                    <Button variant="contained" color="primary" onClick={() => navigate(`/movies/details/${movie.id}`)} >
                         View Details
                     </Button>
-                    <Button variant="outlined" color="secondary" onClick={() => navigate()}>
+                    <Button variant="outlined" color="secondary" onClick={(e) => saveHandler(movie.id)}>
                         Add to Favorites
                     </Button>
                 </Stack>

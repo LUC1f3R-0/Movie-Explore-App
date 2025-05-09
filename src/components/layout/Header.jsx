@@ -32,17 +32,6 @@ export default function SimpleNavBar() {
     const handleOpenSearch = () => setOpenSearchModal(true);
     const handleCloseSearch = () => setOpenSearchModal(false);
 
-    // const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    //     color: 'inherit',
-    //     backgroundColor: alpha(theme.palette.common.white, 0.15),
-    //     '&:hover': {
-    //         backgroundColor: alpha(theme.palette.common.white, 0.25),
-    //     },
-    //     borderRadius: theme.shape.borderRadius,
-    //     width: '100%',
-    //     padding: theme.spacing(1),
-    // }));
-
     const modalStyle = {
         position: 'absolute',
         top: '50%',
@@ -89,8 +78,16 @@ export default function SimpleNavBar() {
                             Trending
                         </NavLink>
 
-                        <NavLink to="two" sx={{ fontWeight: 'bold', color: isDark ? 'white' : 'blue', position: 'relative' }} style={({ isActive }) => ({ fontWeight: 'bold', color: isActive ? 'orange' : isDark ? 'white' : 'blue', textDecoration: isActive ? 'underline' : 'none', })}>
-                            Top Rated
+                        <NavLink
+                            to="two"
+                            sx={{ fontWeight: 'bold', color: isDark ? 'white' : 'blue', position: 'relative' }}
+                            style={({ isActive }) => ({
+                                fontWeight: 'bold',
+                                color: isActive ? 'orange' : isDark ? 'white' : 'blue',
+                                textDecoration: isActive ? 'underline' : 'none',
+                            })}
+                        >
+                            Top
                         </NavLink>
 
                         <NavLink
@@ -110,9 +107,12 @@ export default function SimpleNavBar() {
                         <SearchIcon />
                     </IconButton>
 
-                    <IconButton color="inherit" sx={{ color: isDark ? 'white' : 'blue' }}>
+                    <NavLink
+                        to="favorite"
+                        style={({ isActive }) => ({ color: isActive ? 'orange' : isDark ? 'white' : 'blue', textDecoration: 'none' })}
+                    >
                         <FavoriteIcon />
-                    </IconButton>
+                    </NavLink>
 
                     <IconButton color="inherit" sx={{ color: isDark ? 'white' : 'blue' }} onClick={handleThemeToggle}>
                         {isDark ? <LightModeIcon /> : <DarkModeIcon />}
@@ -130,11 +130,6 @@ export default function SimpleNavBar() {
                     <Typography id="search-modal-title" variant="h6" component="h2" sx={{ mb: 2, color: isDark ? 'white' : 'black' }}>
                         Search
                     </Typography>
-                    {/* <StyledInputBase
-                        autoFocus
-                        placeholder="Type to search..."
-                        inputProps={{ 'aria-label': 'search' }}
-                    /> */}
                     <MuiModal
 
                     />
