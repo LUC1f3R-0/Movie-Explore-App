@@ -10,7 +10,7 @@ const MuiModal = () => {
 
     const handleSearchSubmit = () => {
         if (searchText.trim() !== '') {
-            navigate(`/search?q=${encodeURIComponent(searchText.trim())}`);
+            navigate(`/movie/search?q=${encodeURIComponent(searchText.trim())}`);
         }
     };
 
