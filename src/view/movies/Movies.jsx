@@ -10,7 +10,8 @@ const Movies = () => {
     const dispatch = useDispatch();
     const movies = useSelector((state) => state.movie.movies);
 
-    const fetch = async () => {
+    const fetch = React.useCallback(async () => {
+        setLoading(false);
         try {
             const { data, status } = await axiosInstance.get('/discover/movie');
             if (status === 200) {
@@ -21,12 +22,11 @@ const Movies = () => {
             console.error('Error fetching popular movies:', error);
             setLoading(false);
         }
-    };
+    }, [dispatch]);
 
     React.useEffect(() => {
-        setLoading(false);
         fetch();
-    }, []);
+    }, [fetch]);
 
     return (
         <>
