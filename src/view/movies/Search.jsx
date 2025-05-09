@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Removed useEffect since it's not used
+import React, { useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import { Card, CardContent, CardMedia, Button, Box, Typography, Chip, Stack, Rating } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -43,43 +43,49 @@ const Search = () => {
     };
 
     return (
-        <div style={{ marginTop: '80px' }}> {/* Add margin for space below navbar */}
-            <h2>Search Results</h2>
+        <div style={{ marginTop: '80px' }}>
+            <h2 style={{ textAlign: 'center' }}>Search Results</h2>
 
-            {/* Dropdown for Year */}
-            <label htmlFor="year">Year:</label>
-            <select id="year" onChange={(e) => setSelectedYear(e.target.value)}>
-                <option value="">Select Year</option>
-                {years.map((year) => (
-                    <option key={year} value={year}>{year}</option>
-                ))}
-            </select>
-
-            {/* Dropdown for Genre */}
-            <label htmlFor="genre">Genre:</label>
-            <select id="genre" onChange={(e) => setSelectedGenre(e.target.value)}>
-                <option value="">Select Genre</option>
-                {genres.map((genre) => (
-                    <option key={genre} value={genre}>{genre}</option>
-                ))}
-            </select>
-
-            {/* Dropdown for Rating */}
-            <label htmlFor="rating">Rating:</label>
-            <select id="rating" onChange={(e) => setSelectedRating(e.target.value)}>
-                <option value="">Select Rating</option>
-                {ratings.map((rating) => (
-                    <option key={rating} value={rating}>{rating}</option>
-                ))}
-            </select>
+            {/* Centered Filter Dropdowns */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3, flexWrap: 'wrap', mb: 3 }}>
+                <Box>
+                    <label htmlFor="year">Year:</label><br />
+                    <select id="year" onChange={(e) => setSelectedYear(e.target.value)}>
+                        <option value="">Select Year</option>
+                        {years.map((year) => (
+                            <option key={year} value={year}>{year}</option>
+                        ))}
+                    </select>
+                </Box>
+                <Box>
+                    <label htmlFor="genre">Genre:</label><br />
+                    <select id="genre" onChange={(e) => setSelectedGenre(e.target.value)}>
+                        <option value="">Select Genre</option>
+                        {genres.map((genre) => (
+                            <option key={genre} value={genre}>{genre}</option>
+                        ))}
+                    </select>
+                </Box>
+                <Box>
+                    <label htmlFor="rating">Rating:</label><br />
+                    <select id="rating" onChange={(e) => setSelectedRating(e.target.value)}>
+                        <option value="">Select Rating</option>
+                        {ratings.map((rating) => (
+                            <option key={rating} value={rating}>{rating}</option>
+                        ))}
+                    </select>
+                </Box>
+            </Box>
 
             {/* Filter Button */}
-            <button onClick={handleFilter} disabled={loading}>
-                {loading ? 'Loading...' : 'Filter'}
-            </button>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+                <button onClick={handleFilter} disabled={loading}>
+                    {loading ? 'Loading...' : 'Filter'}
+                </button>
+            </Box>
 
             {/* Error Message */}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
 
             {/* Display Filtered Results */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>

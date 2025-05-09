@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Card, CardContent, Typography, TextField, Button, InputAdornment, IconButton } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
-// import Animations from '../../components/Animations';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { LoginAnimation } from '../../components/Animation';
 
 const Login = () => {
 
@@ -55,7 +55,7 @@ const Login = () => {
             <Card sx={{ width: 500, padding: 2 }}>
                 <CardContent>
                     <Typography variant="h5" align="center" >
-                        {/* {animation} */}
+                        <LoginAnimation/>
                     </Typography>
                     <form onSubmit={handleLogin}>
                         <TextField

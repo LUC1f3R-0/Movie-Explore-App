@@ -45,13 +45,10 @@ export default function SimpleNavBar() {
         <>
             <AppBar position="fixed" sx={{ backgroundColor: isDark ? 'black' : 'white' }}>
                 <Toolbar>
-                    <NavLink
-                        to='/movies'
-                        variant="h6"
-                        component="div"
-                        sx={{ fontWeight: 'bold', color: isDark ? 'white' : 'blue' }}
-                    >
-                        <LiveTvIcon />
+                    <NavLink to="/movies" style={{ textDecoration: 'none' }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', color: isDark ? 'white' : 'blue' }}>
+                            <LiveTvIcon sx={{ fontSize: 30 }} />
+                        </Box>
                     </NavLink>
 
                     <Box

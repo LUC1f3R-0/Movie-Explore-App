@@ -6,5 +6,5 @@ const axiosInstance = axios.create({
     headers: { accept: 'application/json' },
     params: { api_key: process.env.REACT_APP_TMDB_API_KEY }
 })
-console.log(process.env.REACT_APP_TMDB_API_KEY )
+
 export default axiosInstance

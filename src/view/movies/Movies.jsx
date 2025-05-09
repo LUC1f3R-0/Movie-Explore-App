@@ -4,8 +4,12 @@ import axiosInstance from '../../api/axiosInstance';
 import MovieCard from '../../components/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMovies } from '../../redux/movieSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Movies = () => {
+
+    const navigate = useNavigate()
+
     const [loading, setLoading] = React.useState(false);
     const dispatch = useDispatch();
     const movies = useSelector((state) => state.movie.movies);
@@ -25,8 +29,13 @@ const Movies = () => {
     }, [dispatch]);
 
     React.useEffect(() => {
+        const isLogged = JSON.parse(localStorage.getItem('login'));
+
+        if (isLogged) {
+            navigate('/');
+        }
         fetch();
-    }, [fetch]);
+    }, [fetch, navigate]);
 
     return (
         <>
