@@ -58,7 +58,7 @@ export default function SimpleNavBar() {
 
     return (
         <>
-            <AppBar position="static" sx={{ backgroundColor: isDark ? 'black' : 'white' }}>
+            <AppBar position="fixed" sx={{ backgroundColor: isDark ? 'black' : 'white' }}>
                 <Toolbar>
                     <NavLink
                         to='/movies'
@@ -136,7 +136,7 @@ export default function SimpleNavBar() {
                         inputProps={{ 'aria-label': 'search' }}
                     /> */}
                     <MuiModal
-                    
+
                     />
                 </Box>
             </Modal>

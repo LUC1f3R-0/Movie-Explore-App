@@ -9,6 +9,7 @@ import One from '../view/movies/test/One'
 import Two from '../view/movies/test/Two'
 import Three from '../view/movies/test/Three'
 import Movies from '../view/movies/Movies'
+import Search from '../view/movies/Search'
 
 
 const AppRoutes = () => {
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path='/home' element={<Home />} />
             <Route path='/movies' element={<MovieLayout />} >
                 <Route index element={<Movies />} />
+                <Route path='search' element={<Search />} />
                 <Route path='one' element={<One />} />
                 <Route path='two' element={<Two />} />
                 <Route path='three' element={<Three />} />

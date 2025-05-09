@@ -5,8 +5,7 @@ import { setTheme } from '../redux/themeSlice';
 const ThemeWrapper = ({ children }) => {
     const darkMode = useSelector((state) => state.theme.darkMode);
     const dispatch = useDispatch();
-
-    // Load theme from localStorage on mount
+    
     useEffect(() => {
         const storedTheme = localStorage.getItem('darkMode');
         if (storedTheme !== null) {
@@ -16,8 +15,7 @@ const ThemeWrapper = ({ children }) => {
             console.log('No theme preference stored yet.');
         }
     }, [dispatch]);
-
-    // Save to localStorage whenever theme changes
+    
     useEffect(() => {
         localStorage.setItem('darkMode', JSON.stringify(darkMode));
     }, [darkMode]);

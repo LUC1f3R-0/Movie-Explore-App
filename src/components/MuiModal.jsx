@@ -10,16 +10,14 @@ const MuiModal = () => {
 
     const handleSearchSubmit = () => {
         if (searchText.trim() !== '') {
-            navigate(`/movie/search?q=${encodeURIComponent(searchText.trim())}`);
+            navigate(`/movies/search?q=${encodeURIComponent(searchText.trim())}`);
         }
     };
 
     const StyledInputBase = styled(InputBase)(({ theme }) => ({
         color: 'inherit',
         backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
+        '&:hover': { backgroundColor: alpha(theme.palette.common.white, 0.25) },
         borderRadius: theme.shape.borderRadius,
         width: '100%',
         padding: theme.spacing(1),
