@@ -15,7 +15,6 @@ const Login = () => {
         password: 'admin000'
     }
 
-    // const [animation,] = React.useState(Animations)
     const [showPass, setShowPass] = React.useState(false);
     const [name, setName] = React.useState('');
     const [password, setPassword] = React.useState('');

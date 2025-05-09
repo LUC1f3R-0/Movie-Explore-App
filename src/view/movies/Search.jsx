@@ -45,8 +45,7 @@ const Search = () => {
     return (
         <div style={{ marginTop: '80px' }}>
             <h2 style={{ textAlign: 'center' }}>Search Results</h2>
-
-            {/* Centered Filter Dropdowns */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3, flexWrap: 'wrap', mb: 3 }}>
                 <Box>
                     <label htmlFor="year">Year:</label><br />
@@ -76,18 +75,15 @@ const Search = () => {
                     </select>
                 </Box>
             </Box>
-
-            {/* Filter Button */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
                 <button onClick={handleFilter} disabled={loading}>
                     {loading ? 'Loading...' : 'Filter'}
                 </button>
             </Box>
-
-            {/* Error Message */}
+            
             {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
 
-            {/* Display Filtered Results */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                 {results.length > 0 ? (
                     results.map((movie) => (

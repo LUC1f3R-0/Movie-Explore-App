@@ -10,8 +10,8 @@ const MovieCard = ({ movie }) => {
         const favorites = JSON.parse(localStorage.getItem('favorite')) || [];
 
         if (!favorites.includes(id)) {
-            favorites.push(id); // Add new movie ID
-            localStorage.setItem('favorite', JSON.stringify(favorites)); // Save updated array
+            favorites.push(id);
+            localStorage.setItem('favorite', JSON.stringify(favorites));
             console.log("Added to favorites:", favorites);
         } else {
             console.log("Already in favorites");
