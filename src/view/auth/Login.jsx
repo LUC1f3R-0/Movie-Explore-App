@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Card, CardContent, Typography, TextField, Button, InputAdornment, IconButton } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
-import Animations from '../../components/Animations';
+// import Animations from '../../components/Animations';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const Login = () => {
         password: 'admin000'
     }
 
-    const [animation,] = React.useState(Animations)
+    // const [animation,] = React.useState(Animations)
     const [showPass, setShowPass] = React.useState(false);
     const [name, setName] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -55,7 +55,7 @@ const Login = () => {
             <Card sx={{ width: 500, padding: 2 }}>
                 <CardContent>
                     <Typography variant="h5" align="center" >
-                        {animation}
+                        {/* {animation} */}
                     </Typography>
                     <form onSubmit={handleLogin}>
                         <TextField

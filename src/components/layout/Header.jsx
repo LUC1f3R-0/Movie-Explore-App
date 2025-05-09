@@ -19,7 +19,7 @@ export default function SimpleNavBar() {
         JSON.parse(localStorage.getItem('darkMode')) || false
     );
 
-    const [openSearchModal, setOpenSearchModal] = React.useState(false);
+    const [openSearchModal] = React.useState(false);
     const dispatch = useDispatch();
 
     const handleThemeToggle = () => {
@@ -28,10 +28,6 @@ export default function SimpleNavBar() {
         localStorage.setItem('darkMode', JSON.stringify(newMode));
         dispatch(toggleTheme());
     };
-
-    const handleOpenSearch = () => setOpenSearchModal(true);
-    const handleCloseSearch = () => setOpenSearchModal(false);
-
     const modalStyle = {
         position: 'absolute',
         top: '50%',
@@ -125,7 +121,6 @@ export default function SimpleNavBar() {
 
             <Modal
                 open={openSearchModal}
-                onClose={handleCloseSearch}
                 aria-labelledby="search-modal-title"
                 aria-describedby="search-modal-description"
             >

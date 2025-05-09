@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react'; // Removed useEffect since it's not used
 import axiosInstance from '../../api/axiosInstance';
 import { Card, CardContent, CardMedia, Button, Box, Typography, Chip, Stack, Rating } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
-    const [years, setYears] = useState([2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004]);
-    const [genres, setGenres] = useState(['Action', 'Comedy', 'Drama', 'Thriller']);
-    const [ratings, setRatings] = useState(['1-2', '3-4', '5-6', '7-8']);
-
     const [selectedYear, setSelectedYear] = useState('');
     const [selectedGenre, setSelectedGenre] = useState('');
     const [selectedRating, setSelectedRating] = useState('');
@@ -16,6 +12,10 @@ const Search = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    const years = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004];
+    const genres = ['Action', 'Comedy', 'Drama', 'Thriller'];
+    const ratings = ['1-2', '3-4', '5-6', '7-8'];
 
     const handleFilter = async () => {
         if (!selectedYear && !selectedGenre && !selectedRating) {
