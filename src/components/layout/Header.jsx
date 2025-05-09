@@ -103,9 +103,12 @@ export default function SimpleNavBar() {
                         </NavLink>
                     </Box>
 
-                    <IconButton onClick={handleOpenSearch} sx={{ color: isDark ? 'white' : 'blue' }}>
+                    <NavLink
+                        to="search"
+                        style={({ isActive }) => ({ color: isActive ? 'orange' : isDark ? 'white' : 'blue', textDecoration: 'none' })}
+                    >
                         <SearchIcon />
-                    </IconButton>
+                    </NavLink>
 
                     <NavLink
                         to="favorite"

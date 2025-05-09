@@ -15,7 +15,7 @@ const MovieCard = ({ movie }) => {
             console.log("Added to favorites:", favorites);
         } else {
             console.log("Already in favorites");
-        }
+        } 
     };
 
 

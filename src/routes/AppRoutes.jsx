@@ -11,6 +11,7 @@ import Three from '../view/movies/test/Three'
 import Movies from '../view/movies/Movies'
 import MovieDetailsPage from '../view/movies/MovieDetailsPage'
 import Favorites from '../view/movies/Favorites'
+import Search from '../view/movies/Search'
 
 
 const AppRoutes = () => {
@@ -26,6 +27,7 @@ const AppRoutes = () => {
                 <Route path='two' element={<Two />} />
                 <Route path='favorite' element={<Favorites />} />
                 <Route path='three' element={<Three />} />
+                <Route path='search' element={<Search />} />
             </Route>
 
 

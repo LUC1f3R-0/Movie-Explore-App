@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-    Card,
-    CardMedia,
-    CardContent,
-    Typography,
-    Box,
-    Chip,
-    Stack,
-    Button,
-} from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, Box, Chip, Stack, Button, } from '@mui/material';
 
 const MovieDetailCard = ({ movie }) => {
     return (
