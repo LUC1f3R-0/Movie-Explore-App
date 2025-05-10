@@ -25,14 +25,11 @@ const Login = () => {
         if (!name.trim() || !password.trim()) {
             setsError(true)
         } else if (name === loginAuth.userName && password === loginAuth.password) {
+            navigate('/movies')
             Swal.fire({
                 title: "Login Success",
                 icon: "success",
                 draggable: true
-            });
-            localStorage.setItem('login', true)
-            React.startTransition(() => {
-                navigate('/movies')
             });
         } else {
             Swal.fire({
@@ -54,7 +51,7 @@ const Login = () => {
             <Card sx={{ width: 500, padding: 2 }}>
                 <CardContent>
                     <Typography variant="h5" align="center" >
-                        <LoginAnimation/>
+                        <LoginAnimation />
                     </Typography>
                     <form onSubmit={handleLogin}>
                         <TextField

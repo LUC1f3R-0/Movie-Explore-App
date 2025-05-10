@@ -29,11 +29,6 @@ const Movies = () => {
     }, [dispatch]);
 
     React.useEffect(() => {
-        const isLogged = JSON.parse(localStorage.getItem('login'));
-
-        if (isLogged) {
-            navigate('/');
-        }
         fetch();
     }, [fetch, navigate]);
 
