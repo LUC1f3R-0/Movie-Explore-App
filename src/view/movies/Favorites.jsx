@@ -32,7 +32,7 @@ const Favorites = () => {
         title: 'Empty Favorites',
         icon: 'warning',
         confirmButtonText: 'Go Back',
-      }).then(() => navigate(-1));
+      }).then(() => navigate('/movies'));
     } else {
       fetchData();
     }
